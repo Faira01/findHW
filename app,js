@@ -1,0 +1,20 @@
+const users=[
+    {username:'mlewis'},
+    {username:'akagen'},
+    {username:'msmith'}
+]
+
+function findUserByUsername(userArr,username){
+    return userArr.find(function(user){
+        return user.username === username;
+    })
+}
+
+function removeUser(arr,username){
+    let result= arr.findIndex(function(i){
+        return i.username === username
+    })
+    if (result === -1) return;
+
+    return arr.splice(result,1)[0]
+}
